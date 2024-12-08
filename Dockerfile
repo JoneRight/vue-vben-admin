@@ -15,7 +15,7 @@ RUN npm install pnpm -g && \
 # node部分结束
 RUN echo "🎉 编 🎉 译 🎉 成 🎉 功 🎉"
 # nginx 部署
-FROM nginx:1.23.3-alpine as production-stage
+FROM nginx:1.27.3-alpine as production-stage
 COPY --from=build-stage /app/dist /usr/share/nginx/html/dist
 COPY --from=build-stage /app/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
